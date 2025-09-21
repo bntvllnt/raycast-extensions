@@ -10,6 +10,7 @@
     "Windows"
   ],
   "license": "MIT",
+  "categories": ["Productivity", "Media"],
   "commands": [
     {
       "name": "summarize-youtube-video",
