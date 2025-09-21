@@ -6,6 +6,12 @@ import { google } from "@ai-sdk/google";
 
 type Props = LaunchProps<{ arguments: { url: string; question?: string } }>;
 
+type Preferences = {
+  geminiApiKey?: string;
+  maxTokens?: string;
+  defaultPrompt?: string;
+};
+
 function isYouTubeUrl(input: string): boolean {
   try {
     const u = new URL(input);
@@ -19,7 +25,7 @@ export default function Command(props: Props) {
   const { url, question } = props.arguments;
   const [markdown, setMarkdown] = useState<string>("Preparing…");
   const [isLoading, setIsLoading] = useState<boolean>(true);
-  const prefs = getPreferenceValues<{ geminiApiKey?: string; maxTokens?: string; defaultPrompt?: string }>();
+  const prefs = getPreferenceValues<Preferences>();
 
   const validUrl = useMemo(() => (url ? isYouTubeUrl(url) : false), [url]);
 
