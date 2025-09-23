@@ -1,4 +1,5 @@
 import { BrowserExtension, LaunchType, launchCommand, showToast, Toast, LaunchProps } from "@raycast/api";
+// storage is used by the summarizer view; no need to pre-check here
 
 function isYouTubeUrl(input: string): boolean {
   try {
@@ -29,6 +30,7 @@ export default async function Command(props: Props): Promise<void> {
       return;
     }
 
+    // Always open the view. If an existing summary exists, it will load instantly; otherwise, it will stream and persist.
     await launchCommand({
       name: "summarize-youtube-video",
       type: LaunchType.UserInitiated,

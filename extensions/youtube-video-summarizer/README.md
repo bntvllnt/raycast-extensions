@@ -9,10 +9,12 @@ Summarize any YouTube video into a crisp markdown summary and key points. Stream
 - Two ways to start:
   - Paste a URL
   - One‑shot from the active YouTube tab (Raycast Web Extension)
+ - Saved summaries list: search with titles/channels, thumbnails, toggle list/grid, re‑run or delete
 
 ## Commands
-- Summarize YouTube Video: prompts for a YouTube URL and shows a streaming summary in a `Detail` view
-- Summarize Active YouTube Tab: grabs the current YouTube tab via Raycast Web Extension and launches the summarizer
+- Summarize YouTube Video: prompts for a YouTube URL and shows a streaming summary in a `Detail` view. If a saved summary exists, it opens instantly; if you close, progress is still saved and visible in the list.
+- Summarize Active YouTube Tab: opens the streaming view for the active YouTube tab; if a summary exists, it appears immediately.
+- YouTube Summaries: browse/search all saved summaries with titles and thumbnails.
 
 ### Optional custom instruction/question
 - Both commands accept an optional `question` argument to override the default prompt.
@@ -31,8 +33,8 @@ Summarize any YouTube video into a crisp markdown summary and key points. Stream
 
 ## Usage
 1) Run “Summarize YouTube Video” and paste a YouTube URL, or run “Summarize Active YouTube Tab”.
-2) Optionally add a `question` to steer the analysis (e.g. "compare pros/cons", "for beginners").
-3) Watch the summary stream in; copy/paste the markdown anywhere.
+2) If already summarized, it opens immediately. Otherwise, it streams and saves as it goes. You can quit and return later in the list.
+3) Browse and search past summaries via “YouTube Summaries” (title + channel + thumbnail).
 
 ## Privacy
 - Your API key is stored locally by Raycast preferences

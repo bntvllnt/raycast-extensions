@@ -6,6 +6,15 @@ This project adheres to Keep a Changelog and uses Semantic Versioning.
 
 ## [Unreleased]
 
+## [0.2.0] - 2025-09-23
+### Added
+- Command `list-summaries` ("YouTube Summaries"): browse and search saved summaries with titles, channels, and thumbnails; toggle list/grid view; actions to view, re‑run, open video, and delete.
+- Local summary persistence and status tracking. Existing summaries open instantly; in‑progress streams persist to the list.
+
+### Changed
+- `summarize-youtube-video` and `summarize-active-youtube-tab` open the streaming view immediately and load any existing saved summary.
+- Internal: set explicit command `path` fields in the extension manifest for these commands.
+
 ## [0.1.0] - 2025-09-21
 ### Added
 - Optional `question` argument on both commands to override the default prompt/instruction.

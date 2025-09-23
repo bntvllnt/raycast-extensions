@@ -17,6 +17,7 @@
       "title": "Summarize Youtube Video",
       "description": "Summarize any YouTube video into a crisp summary + key points",
       "mode": "view",
+      "path": "summarize-youtube-video.tsx",
       "arguments": [
         {
           "name": "url",
@@ -37,6 +38,7 @@
       "title": "Summarize Active Youtube Tab",
       "description": "Detect the active YouTube tab via Raycast Web Extension and summarize",
       "mode": "no-view",
+      "path": "summarize-active-youtube-tab.tsx",
       "arguments": [
         {
           "name": "question",
@@ -47,6 +49,13 @@
       ],
       "keywords": ["youtube", "tab", "web", "browser"],
       "permissions": ["browser-extension"]
+    },
+    {
+      "name": "list-summaries",
+      "title": "YouTube Summaries",
+      "description": "Browse, search, and manage saved summaries",
+      "mode": "view",
+      "path": "list-summaries.tsx"
     }
   ],
   "preferences": [
