@@ -52,7 +52,7 @@
     },
     {
       "name": "list-summaries",
-      "title": "YouTube Summaries",
+      "title": "Youtube Summaries",
       "description": "Browse, search, and manage saved summaries",
       "mode": "view",
       "path": "list-summaries.tsx"
