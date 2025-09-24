@@ -12,6 +12,7 @@ type Preferences = {
   geminiApiKey?: string;
   maxTokens?: string;
   defaultPrompt?: string;
+  geminiModel?: "gemini-2.5-flash" | "gemini-2.5-pro";
 };
 
 function isYouTubeUrl(input: string): boolean {
@@ -36,7 +37,9 @@ export default function Command(props: Props) {
   async function rerun(): Promise<void> {
     try {
       setIsLoading(true);
-      setMarkdown("Generating summary with Gemini 2.5 Pro…");
+      const selectedModel = prefs.geminiModel || "gemini-2.5-flash";
+      const modelLabel = selectedModel === "gemini-2.5-pro" ? "Gemini 2.5 Pro" : "Gemini 2.5 Flash";
+      setMarkdown(`Generating summary with ${modelLabel}…`);
 
       if (!prefs.geminiApiKey) {
         await showToast({ style: Toast.Style.Failure, title: "Gemini API key required" });
@@ -67,13 +70,13 @@ export default function Command(props: Props) {
           channel: meta?.author_name,
           thumbnailUrl: meta?.thumbnail_url,
           question,
-          model: "gemini-2.5-pro",
+          model: selectedModel,
           status: "in_progress",
         });
       }
 
       const { text } = await generateText({
-        model: google("gemini-2.5-pro"),
+        model: google(selectedModel),
         messages: [
           {
             role: "user",
@@ -128,7 +131,9 @@ export default function Command(props: Props) {
         }
 
         // Otherwise generate (non-streaming) and persist
-        setMarkdown("Generating summary with Gemini 2.5 Pro…");
+        const selectedModel = prefs.geminiModel || "gemini-2.5-flash";
+        const modelLabel = selectedModel === "gemini-2.5-pro" ? "Gemini 2.5 Pro" : "Gemini 2.5 Flash";
+        setMarkdown(`Generating summary with ${modelLabel}…`);
         if (!prefs.geminiApiKey) {
           await showToast({ style: Toast.Style.Failure, title: "Gemini API key required" });
           setMarkdown("Please set your Gemini API key in preferences.");
@@ -156,13 +161,13 @@ export default function Command(props: Props) {
             channel: meta?.author_name,
             thumbnailUrl: meta?.thumbnail_url,
             question,
-            model: "gemini-2.5-pro",
+            model: selectedModel,
             status: "in_progress",
           });
         }
 
         const { text } = await generateText({
-          model: google("gemini-2.5-pro"),
+          model: google(selectedModel),
           messages: [
             {
               role: "user",

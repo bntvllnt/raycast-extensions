@@ -81,6 +81,18 @@
       "description": "Instruction used for analysis",
       "default": "Extract key points and themes. Be concise.",
       "required": false
+    },
+    {
+      "name": "geminiModel",
+      "type": "dropdown",
+      "title": "Gemini Model",
+      "description": "Choose the Gemini 2.5 model",
+      "default": "gemini-2.5-flash",
+      "required": false,
+      "data": [
+        { "title": "Gemini 2.5 Flash", "value": "gemini-2.5-flash" },
+        { "title": "Gemini 2.5 Pro", "value": "gemini-2.5-pro" }
+      ]
     }
   ],
   "dependencies": {

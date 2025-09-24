@@ -5,6 +5,8 @@ All notable changes to the Raycast extension `youtube-video-summarizer` will be 
 This project adheres to Keep a Changelog and uses Semantic Versioning.
 
 ## [Unreleased]
+### Added
+- Preference `Gemini Model`: choose between `gemini-2.5-flash` (default) and `gemini-2.5-pro`. The selected model is used for both initial runs and re-runs, and is recorded with each summary.
 
 ## [0.2.0] - 2025-09-23
 ### Added

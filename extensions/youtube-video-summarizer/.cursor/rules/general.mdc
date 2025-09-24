@@ -1,0 +1,9 @@
+---
+description:
+globs:
+alwaysApply: true
+---
+
+- Ensure all changes are reflected in:
+  - `README.md`
+  - `CHANGELOG.md`

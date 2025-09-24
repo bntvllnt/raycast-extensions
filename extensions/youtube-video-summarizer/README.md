@@ -2,7 +2,7 @@
 
 Turn any YouTube link into a concise, high‑signal summary directly inside Raycast. Paste a URL or one‑shot summarize the active YouTube tab. Browse, search, and re‑run saved summaries anytime.
 
-- Fast, accurate summaries powered by Gemini 2.5 Pro
+- Fast, accurate summaries powered by Gemini 2.5 (Flash or Pro)
 - Works with watch, Shorts, and live videos — no YouTube Data API required
 - Save, search, and manage summaries with thumbnails and titles
 
@@ -38,6 +38,7 @@ Both summarize commands support an optional `question` argument to override the 
 - **Gemini API Key (required)**: Your Google AI Studio API key. Set in the extension preferences.
 - **Max Tokens**: Maximum tokens to generate (default: 4000).
 - **Default Prompt**: Base instruction for analysis when `question` is not provided.
+- **Gemini Model**: Choose between `gemini-2.5-flash` (default) and `gemini-2.5-pro`.
 
 ## Requirements
 - Google AI Studio API key (Gemini)
@@ -74,7 +75,7 @@ Both summarize commands support an optional `question` argument to override the 
 
 ### Tech
 - `@raycast/api`, `@raycast/utils`
-- `ai` + `@ai-sdk/google` (Gemini 2.5 Pro)
+- `ai` + `@ai-sdk/google` (Gemini 2.5 Flash/Pro)
 - Local storage with `LocalStorage`
 - YouTube oEmbed for lightweight metadata
 
